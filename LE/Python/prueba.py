@@ -3,6 +3,13 @@ from struct import pack
 from tkinter import *
 from tkinter import ttk
 
+def Imc ():
+    peso = entrada3.get()
+    altura = entrada4.get()
+    Idice = peso*(altura**2)
+
+
+
 ventana = Tk()
 ventana.geometry("400x300")
 
@@ -26,8 +33,9 @@ ingreso4.pack()
 entrada4 = ttk.Entry(ventana)
 entrada4.pack()
 
-submit = ttk.Button(text="Siguiente", command=lambda: print(entrada.get(), entrada2.get()))
+submit = ttk.Button(text="Siguiente", command=lambda: print(Imc()))
 submit.pack()
 quit = ttk.Button(ventana, command=ventana.destroy, text="Quit")
 quit.pack()
+
 ventana.mainloop()
