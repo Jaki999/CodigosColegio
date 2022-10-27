@@ -1,7 +1,4 @@
-from multiprocessing import connection
-from sqlite3 import connect
 from tkinter import *
-from tkinter import ttk
 from tkinter import messagebox
 
 user={
@@ -38,17 +35,22 @@ def incorrectUser():
 
 ventana_login = Tk()
 ventana_login.title("Login")
-ventana_login.geometry("300x500")
+ventana_login.geometry("925x500+350+50")
+ventana_login.resizable(False, False)
 ventana_login.config(bg='#5DA7DB')
 
-entry_username = ttk.Entry(ventana_login)
+img=PhotoImage(file='LE\Python\Login_Project\Lock.png')
+image=Label(ventana_login, image=img, bg='#5DA7DB').place(x=50, y=50)
+
+
+entry_username = Entry(ventana_login)
 entry_username.pack()
-entry_password = ttk.Entry(ventana_login)
+entry_password = Entry(ventana_login, show='*',)
 entry_password.pack()
 
-accept = ttk.Button(ventana_login, command=connection, text="Commit")
+accept = Button(ventana_login, command=connection, text="Commit")
 accept.pack()
-quit = ttk.Button(ventana_login, command=ventana_login.destroy, text="Quit")
+quit = Button(ventana_login, command=ventana_login.destroy, text="Quit")
 quit.pack()
 
 ventana_login.mainloop()
