@@ -34,18 +34,26 @@ ventana_login.config(bg='#5DA7DB')
 img = ImageTk.PhotoImage(Image.open("LE\Python\Login_Project\candado_3_300x300.png"))
 displayimg = Label(ventana_login, image=img, bg='White').place(x=50, y=75)
 
+###marco
+frame = Frame(ventana_login, width=350, height=350, bg='red')
+frame.place(x=480, y=70)
+
+###labels
+Singin = Label(frame, text="singin") 
+Singin.pack()
+
 ###entrys
 entry_username = Entry(ventana_login)
 entry_username.pack()
 entry_password = Entry(ventana_login, show='*',)
 entry_password.pack()
 
-
 ###botones
 accept = Button(ventana_login, command=connection, text="Commit")
 accept.pack()
 quit = Button(ventana_login, command=ventana_login.destroy, text="Quit")
 quit.pack()
+
 
 
 
