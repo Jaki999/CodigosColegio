@@ -35,27 +35,31 @@ img = ImageTk.PhotoImage(Image.open("LE\Python\Login_Project\candado_3_300x300.p
 displayimg = Label(ventana_login, image=img, bg='#5DA7DB').place(x=50, y=75)
 
 ###marcos
-frame = Frame(ventana_login, width=350, height=350, bg='#256D85')
-frame.place(x=480, y=70)
-Frame(frame, width=295, height=2, bg='black').place(x=25, y=107)
+frame_1 = Frame(ventana_login, width=350, height=350, bg='#256D85')
+frame_1.place(x=480, y=70)
+Frame(frame_1, width=295, height=2, bg='black').place(x=25, y=107)
+Frame(frame_1, width=295, height=2, bg='black').place(x=25, y=177)
 
 ###labels
-Singin = Label(frame, text="Log In", fg='#256D85', bg='#256D85', font=('Microsoft YaHei UI Light', 20, 'bold')) 
+Singin = Label(frame_1, text="Log In", fg='#256D85', bg='#256D85', font=('Microsoft YaHei UI Light', 20, 'bold')) 
 Singin.place(x=135,y=0)
 
 ###entrys
-entry_username = Entry(frame, width=20, border=0, bg='#256D85', font=('Microsoft YaHei UI Light', 11))
+entry_username = Entry(frame_1, width=20, border=0, bg='#256D85', font=('Microsoft YaHei UI Light', 11))
 entry_username.place(x=30, y=80)
 entry_username.insert(0,'Username')
-entry_password = Entry(ventana_login, show='*',)
-entry_password.pack()
+
+entry_password = Entry(frame_1, width=20, border=0, bg='#256D85', show='*', font=('Microsoft YaHei UI Light', 11))
+entry_password.place(x=30, y=150)
+entry_password.insert(0,'Password')
+
 
 
 ###botones
-accept = Button(ventana_login, command=connection, text="Commit")
-accept.pack()
-quit = Button(ventana_login, command=ventana_login.destroy, text="Quit")
-quit.pack()
+accept = Button(frame_1, width=39, pady=7, command=connection, text="Commit")
+accept.place(x=30, y=200)
+quit = Button(frame_1, width=15, pady=5, command=ventana_login.destroy, text="Quit")
+quit.place(x=114, y=250)
 
 
 
