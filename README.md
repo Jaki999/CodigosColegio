@@ -1,4 +1,4 @@
 # CodigosColegio
-Lucio Jacobo Policella \n
-lpolicella@etrr.edu.ar \n
+Lucio Jacobo Policella
+lpolicella@etrr.edu.ar
 policellajacobo@gmail.com
