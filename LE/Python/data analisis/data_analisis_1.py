@@ -4,14 +4,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from IPython.display import display_html
 import plotly.express as px
-from tkinter import *
 
-Root = Tk()
+pd.options.display.max_rows = 9999
+pd.options.display.max_info_columns = 9999
+df = pd.read_csv('Resultados_internacionales_rugby.csv')
 
-def aaa():
-    df = pd.read_csv('Resultados_internacionales_rugby.csv')
-    print(df)
-
-Label1 = Label(Root, text=aaa)
-Label1.pack()
-Root.mainloop()
+df['ganador']=np.where(df['home_score'] > df['away_score'] , df['home_score'], np.nan)
