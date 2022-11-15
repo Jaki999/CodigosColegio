@@ -2,10 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-
 int cantidadNPCs;
-
 
 struct NPCs {
     int id;
@@ -23,8 +20,6 @@ int main() {
     agregarNPC();
 }
 
-
-
 void agregarNPC (void) {
     srand(time(NULL));
     for(int i = 0; i<cantidadNPCs; i++){
@@ -34,6 +29,5 @@ void agregarNPC (void) {
         p_npc->id = prn;
         
         printf("\n El npc %d tiene el siguiente ID: %d",i , p_npc->id);
-
     }
 }
