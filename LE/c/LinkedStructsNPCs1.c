@@ -16,7 +16,6 @@ typedef struct NPCs* puntero;
 puntero p_npc = &npc;
 
 void agregarNPC (void);
-void nameChose (void);
 
 int main() {
     printf ("\n Cuantos NPCs desea ingresar? ");
@@ -38,6 +37,3 @@ void agregarNPC (void) {
 
     }
 }
-
-void nameChose (void) {
-}    t        nnnnnbbvvvbnmjhgfdsxczsexo
