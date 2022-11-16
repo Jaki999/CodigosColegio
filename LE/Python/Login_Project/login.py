@@ -43,7 +43,7 @@ Frame(frame_1, width=295, height=2, bg='black').place(x=25, y=107)
 Frame(frame_1, width=295, height=2, bg='black').place(x=25, y=177)
 
 ###imagen
-img = ImageTk.PhotoImage(Image.open("LE\Python\Login_Project\candado_3_300x300.png"))
+img = ImageTk.PhotoImage(Image.open("Login_Project\candado_3_300x300.png"))
 displayimg = Label(frame_2, image=img, bg='#5DA7DB').place(x=50, y=75)
 
 ###labels
