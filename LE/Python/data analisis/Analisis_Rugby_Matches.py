@@ -9,4 +9,3 @@ df = pd.read_csv('Resultados_internacionales_rugby.csv')
 ##df.dtypes
 df['ganador']=np.where(df['home_score'] > df['away_score'] , 'home', np.nan)
 display_html(df)
-
