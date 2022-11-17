@@ -1,67 +1,33 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-struct npc
-{
+int cantidadNPCs;
+
+struct NPCs {
     int id;
-    char name[20];
-    int level;
-    struct npc *next;
-} npc1, npc2, npc3;
+    struct NPCs *next;
+} npc;
 
-void ordenar (void);
-void printear (void);
+typedef struct NPCs* puntero;
+puntero p_npc = &npc;
 
+void agregarNPC (void);
 
 int main() {
-    npc1.id = 1;
-    npc2.id = 2;
-    npc3.id = 3;
-    strcpy(npc1.name, "juan");
-    strcpy(npc2.name, "rodrigo");
-    strcpy(npc3.name, "hector");
-    npc1.level = 20;
-    npc2.level = 37;
-    npc3.level = 28;
-
-    npc1.next = &npc2;
-    npc2.next = &npc3;
-    npc3.next = NULL;
-
-    printf("%s", npc2.next->name);
+    printf ("\n Cuantos NPCs desea ingresar? ");
+    scanf ("%d", &cantidadNPCs);  
+    agregarNPC();
 }
-void ordenar(){
-    printf("\n---------------------------------------------------");
-    printf("\nNPCs ordenanos por lv: ");
-    
-    if (npc1.level > npc2.level && npc1.level > npc3.level){
-        printf("\nTenis: %d", npc1.level);
-        if(npc2.level > npc3.level){
-            printf("\nFutbol: %d", npc2.level);
-            printf("\nBasquet: %d", npc3.level);
-        } else if(npc3.level > npc2.level){
-            printf("\nBasquet: %d", npc3.level);
-            printf("\nFutbol: %d", npc2.level);
-        }
-    } 
-    else if(npc2.level > npc1.level && npc2.level > npc3.level){
-        printf("\nFutbol: %d", npc2.level);
-        if(npc3.level > npc1.level){
-            printf("\nBasquet: %d", npc3.level);
-            printf("\nTenis: %d", npc1.level);
-        } else if(npc3.level > npc1.level){
-            printf("\nTenis: %d", npc1.level);
-            printf("\nBasquet: %d", npc3.level);
-        }
-    } 
-    else if(npc3.level > npc2.level && npc3.level > npc1.level){
-        printf("\nBasquet: %d", npc3.level);
-        if(npc2.level > npc1.level){
-            printf("\nFutbol: %d", npc2.level);
-            printf("\nTenis: %d", npc1.level);
-        } else if(npc1.level > npc2.level){
-            printf("\nTenis: %d", npc1.level);
-            printf("\nFutbol: %d", npc2.level);
-        }
+
+void agregarNPC (void) {
+    srand(time(NULL));
+    for(int i = 0; i<cantidadNPCs; i++){
+        int prn = rand();
+        
+        p_npc->next = malloc(sizeof(puntero));
+        p_npc->id = prn;
+        
+        printf("\n El npc %d tiene el siguiente ID: %d",i , p_npc->id);
     }
-    printf("\n---------------------------------------------------");
 }
